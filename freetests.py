@@ -205,7 +205,7 @@ class TestHTTPClient(unittest.TestCase):
         self.assertTrue(req.code == 200,"Code is %s but I wanted a 200 OK" % req.code)
 
         
-        
+
     # consider disabling this test until everything else works
     def testInternetGets(self):
         '''Test HTTP Get in the wild, these webservers are far less
@@ -216,7 +216,7 @@ class TestHTTPClient(unittest.TestCase):
             "http://www.cs.ualberta.ca/",
             "http://softwareprocess.es/static/SoftwareProcess.es.html",
             "http://c2.com/cgi/wiki?CommonLispHyperSpec",
-            "http://slashdot.org"
+            "http://slashdot.org/"
             ]
         for url in urls:
             try:
@@ -233,6 +233,7 @@ class TestHTTPClient(unittest.TestCase):
                 self.assertTrue(req.body.find("DOCTYPE")>=0 or 
                                 req.body.find("<body")>=0 , 
                                 "%s Data: [%s] " % (url,req.body))
+
     
     def testPOST(self):
         '''Test HTTP POST with an echo server'''
